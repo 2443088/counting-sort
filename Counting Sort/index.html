@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counting Sort Adventure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Counting Sort Adventure</h1>
+        
+        <div class="tabs">
+            <button class="tab-button active" data-tab="numbers">Numbers</button>
+            <button class="tab-button" data-tab="naruto">Naruto Clans</button>
+        </div>
+        
+        <!-- Numbers Tab -->
+        <div id="numbers" class="tab-content active">
+            <div class="animation-container">
+                <div class="original-array">
+                    <h3>Original Array: [2, 1, 2, 4, 3, 5, 4]</h3>
+                    <div class="number-boxes"></div>
+                </div>
+                
+                <div class="step" id="step1">
+                    <h3>Step 1: Find Maximum Value</h3>
+                    <div class="max-value-display"></div>
+                    <div class="code">max_val = max(arr) <span class="comment"># Finds the biggest number</span></div>
+                </div>
+                
+                <div class="step" id="step2">
+                    <h3>Step 2: Create Count Array</h3>
+                    <div class="count-array"></div>
+                    <div class="code">count = [0] * (max_val + 1)</div>
+                </div>
+                
+                <div class="step" id="step3">
+                    <h3>Step 3: Count Occurrences</h3>
+                    <div class="counting-process"></div>
+                    <div class="code">
+                        for num in arr:<br>
+                        &nbsp;&nbsp;count[num] += 1
+                    </div>
+                </div>
+                
+                <div class="step" id="step4">
+                    <h3>Step 4: Build Sorted Array</h3>
+                    <div class="sorted-array"></div>
+                    <div class="code">
+                        sorted_arr = []<br>
+                        for num in range(len(count)):<br>
+                        &nbsp;&nbsp;sorted_arr.extend([num] * count[num])
+                    </div>
+                </div>
+
+                <div class="step" id="step5">
+                    <h3>Step 5: Create Output Array</h3>
+                    <div class="sorted-array"></div>
+                    <div class="code">
+                        sorted_arr = []<br>
+                        for num in range(len(count)):<br>
+                        &nbsp;&nbsp;sorted_arr.extend([num] * count[num])
+                    </div>
+                </div>
+
+                <div class="step" id="step6">
+                    <h3>Step 6: Build Output Array</h3>
+                    <div class="sorted-array"></div>
+                    <div class="code">
+                        sorted_arr = []<br>
+                        for num in range(len(count)):<br>
+                        &nbsp;&nbsp;sorted_arr.extend([num] * count[num])
+                    </div>
+                </div>
+
+                <div class="step" id="step7">
+                    <h3>Result: Show Final Array</h3>
+                    <div class="sorted-array"></div>
+                    <div class="code">
+                        sorted_arr = []<br>
+                        for num in range(len(count)):<br>
+                        &nbsp;&nbsp;sorted_arr.extend([num] * count[num])
+                    </div>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button id="prev-step">Previous Step</button>
+                <button id="next-step">Next Step</button>
+                <button id="restart">Restart</button>
+            </div>
+        </div>
+        
+        <!-- Naruto Tab -->
+        <div id="naruto" class="tab-content">
+            <div class="clan-sorting-area">
+                <!-- Clans Display at Top -->
+                <div class="clans-header" id="clans-header">
+                    <h3>Naruto Clans</h3>
+                    <div class="clans-container"></div>
+                </div>
+                
+                <!-- Sorting Visualization Area -->
+                <div class="sorting-visualization">
+                    <!-- Step 1: Find Max Clan -->
+                    <div class="step-content" id="naruto-step1">
+                        <h3>Step 1: Find Most Populated Clan</h3>
+                        <div class="max-clan-display"></div>
+                        <div class="code">max_clan = max(clans) <span class="comment"># Finds the clan with most members</span></div>
+                    </div>
+                    
+                    <!-- Step 2: Create Count Array -->
+                    <div class="step-content" id="naruto-step2" style="display: none;">
+                        <h3>Step 2: Create Count Array</h3>
+                        <div class="count-array-display"></div>
+                        <div class="code">count = [0] * (max_clan + 1)</div>
+                    </div>
+                    
+                    <!-- Step 3: Count Clan Members -->
+                    <div class="step-content" id="naruto-step3" style="display: none;">
+                        <h3>Step 3: Count Clan Members</h3>
+                        <div class="counting-process"></div>
+                        <div class="code">
+                            for char in characters:<br>
+                            &nbsp;&nbsp;count[char.clan] += 1
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4: Modify Count Array -->
+                    <div class="step-content" id="naruto-step4" style="display: none;">
+                        <h3>Step 4: Modify Count Array</h3>
+                        <div class="modify-count-display"></div>
+                        <div class="code">
+                            for i in range(1, len(count)):<br>
+                            &nbsp;&nbsp;count[i] += count[i-1]
+                        </div>
+                    </div>
+                    
+                    <!-- Step 5: Create Output Array -->
+                    <div class="step-content" id="naruto-step5" style="display: none;">
+                        <h3>Step 5: Create Output Array</h3>
+                        <div class="output-array-display"></div>
+                        <div class="code">output = [None] * len(characters)</div>
+                    </div>
+                    
+                    <!-- Step 6: Build Output Array -->
+                    <div class="step-content" id="naruto-step6" style="display: none;">
+                        <h3>Step 6: Build Output Array</h3>
+                        <div class="build-output-display"></div>
+                        <div class="code">
+                            for char in reversed(characters):<br>
+                            &nbsp;&nbsp;output[count[char.clan] - 1] = char<br>
+                            &nbsp;&nbsp;count[char.clan] -= 1
+                        </div>
+                    </div>
+                    
+                    <!-- Step 7: Final Sorted Characters -->
+                    <div class="step-content" id="naruto-step7" style="display: none;">
+                        <h3>Step 7: Final Sorted Characters</h3>
+                        <div class="final-sorted-display"></div>
+                        <div class="code"># Sorting complete!</div>
+                    </div>
+                </div>
+                
+                <!-- Characters Display (Initial State) -->
+                <div class="characters-display active" id="characters-display">
+                    <h3>Characters</h3>
+                    <div class="characters-container"></div>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button id="start-naruto">Sort Characters</button>
+                <button id="next-naruto-step">Next Step</button>
+                <button id="reset-naruto">Reset</button>
+            </div>
+        </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

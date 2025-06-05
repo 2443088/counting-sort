@@ -1,0 +1,1095 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #fbfbfb;
+    margin: 0;
+    padding: 20px;
+    color: white;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #2b2a26;
+    padding: 10px 50px 10px;
+    border-radius: 15px;
+    box-shadow: 0 0 100px rgba(255, 130, 46, 0.644);
+}
+
+h1 {
+    color: #fbfbfb;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+h3 {
+    color: #020202;
+    margin-top: 0px;
+}
+
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.tab-button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #ffbd95;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+    color: #020202;
+}
+
+.tab-button.active {
+    background-color: #fbfbfb;
+    color: #020202;
+    font-weight: bold;
+}
+
+.tab-button:hover {
+    transform: scale(1.05);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.animation-container {
+    background-color: #eb6a28;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.number-boxes .count-boxes, .output-boxes {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.number-boxes {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.number-box {
+    width: 50px;
+    height: 50px;
+    background-color: #fbfbfb;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px rgba(250, 178, 178, 0.368);
+    transition: all 0.3s;
+    color: #020202;
+}
+
+.number-box.active {
+    background-color: #fda66c;
+    transform: scale(1.1);
+}
+
+.number-box.highlight {
+    background-color: #fda66c;
+    transform: scale(1.1);
+}
+
+/* Add to your existing CSS */
+.count-visualization {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.count-display {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.count-index {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.count-value {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.count-box {
+    width: 60px;
+    height: 70px;
+    background-color: #4a4945;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.count-box.active {
+    transform: scale(1.1);
+}
+
+.count-box.updated {
+    background-color: #ff822e;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 130, 46, 0.7);
+}
+
+.count-box.updated .index {
+    color: rgb(184, 184, 184);
+}
+
+.output-box {
+    width: 100px;
+    height: 60px;
+    background-color: #4a4945;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.output-box.empty {
+    border: 1px dashed #ffbd95;
+}
+
+.output-box.filled {
+    background-color: #ff822e;
+    color: white;
+}
+
+.output-box.filled .index {
+    font-size: 12px;
+    color: #fed9a9;
+}
+
+.output-box.highlight {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px gold;
+}
+
+.success {
+    color: #2b8a3e;
+    font-weight: bold;
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.number-box.processing {
+    background-color: #fcc2d7;
+    transform: scale(1.1);
+    transition: all 0.3s;
+}
+
+.step {
+    margin: 30px 0;
+    padding: 15px;
+    background-color: #fbfbfb;
+    border-radius: 8px;
+    display: none;
+}
+
+.step.active {
+    display: block;
+}
+
+.code {
+    font-family: 'Courier New', monospace;
+    background-color: #2d3436;
+    color: #fdcb6e;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+    white-space: pre-wrap;
+}
+
+.comment {
+    color: #b2bec3;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.controls button {
+    padding: 10px 20px;
+    background-color: #09267d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+    color: white;
+}
+
+.controls button:hover {
+    background-color: #8aa3fe;
+    color: black;
+}
+
+/* Step 1: Find Max Value */
+#step1 h3 {
+    color: #020202;
+}
+
+#step1 .max-value-display {
+    color: #000000;
+}
+
+#step1 .max-value-display .highlight{
+    background-color: #ff3137 !important;
+    padding: 0px 5px 0px;
+    border-radius: 20px;
+    color: white;
+}
+
+/* Step 2: Create Count Array */
+#step2 h3 {
+    color: #020202;
+}
+
+/* Step 3: Count Occurances */
+#step3 h3 {
+    color: #020202;
+}
+
+/* Step 4: Modify Count Array */
+#step4 h3 {
+    color: #020202;
+}
+
+/* Step 5: Create Output Array Styles */
+#step5 h4 {
+    margin: 0 0 10px 0;
+    color: #fd8443cc;
+    text-align: center;
+}
+
+/* Step 6: Build Output Array Styles */
+#step6 h4 {
+    margin: 0 0 10px 0;
+    color: #fd8443cc;
+    text-align: center;
+}
+
+/* Step 7: Final Sorted Array Styles */
+#step7 .final-array-container {
+    background-color: #fbfbfb;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+#step7 .final-array {
+    position: relative;
+    z-index: 2;
+    font-size: 1.2em;
+    padding: 2px 30px 20px;
+    background: #020202;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+#step7 .boxes {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#step7 .box {
+    width: 70px;
+    height: 70px;
+    background-color: #ff3137;
+    color: white;
+    border-radius: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(245, 149, 149, 0.537);
+    animation: bounceIn 0.5s ease-out both;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+#step7 .confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #fdcb6e;
+    opacity: 0;
+    animation: confetti 5s ease-in-out infinite;
+    z-index: 1;
+}
+
+#step7 .confetti:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+    background-color: #ff7675;
+}
+#step7 .confetti:nth-child(2) {
+    left: 30%;
+    animation-delay: 0.5s;
+    background-color: #74b9ff;
+}
+#step7 .confetti:nth-child(3) {
+    left: 50%;
+    animation-delay: 1s;
+    background-color: #55efc4;
+}
+#step7 .confetti:nth-child(4) {
+    left: 70%;
+    animation-delay: 1.5s;
+    background-color: #a29bfe;
+}
+#step7 .confetti:nth-child(5) {
+    left: 90%;
+    animation-delay: 2s;
+    background-color: #ffeaa7;
+}
+
+@keyframes confetti {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(500px) rotate(360deg); opacity: 0; }
+}
+
+#step7 .complexity {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #020202;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    text-align: center;
+    box-shadow: 0 0 25px #bc521094;
+}
+
+#step7 .complexity p {
+    margin: 5px 0;
+}
+
+
+/* Consistent styling for all steps */
+.visualization {
+    margin-top: 20px;
+    background-color:#2b2a26;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.array-display {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.boxes {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: rgb(255, 255, 255)
+}
+
+.box {
+    width: 60px;
+    height: 70px;
+    background-color: #020202;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.box.empty {
+    background-color: #000000;
+    border: 1px dashed #ffffff;
+}
+
+.box .index {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.box.active .index {
+    color: #000000;
+}
+
+.box .value {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.box.active .value {
+    color: #2b2a26;
+}
+
+.box.active {
+    border: 1.5px solid #ffffff;
+    background-color: #eb6a28;
+    transform: scale(1.1);
+
+}
+
+.processing-text {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    padding: 10px;
+    background-color: #fbfbfb;
+    border-radius: 5px;
+    margin-top: 15px;
+    line-height: 1.5;
+    color: #020202;
+}
+
+.final-result {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #151515;
+    border-radius: 5px;
+    font-weight: bold;
+    color: rgb(24, 212, 24)
+}
+
+.code {
+    font-family: 'Courier New', monospace;
+    background-color: #2d3436;
+    color: #fdcb6e;
+    padding: 12px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.executing {
+    border-left: 4px solid #74b9ff;
+}
+
+/* Naruto Tab Specific Styles */
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: black;
+    padding: 2px;
+    object-fit: cover;
+}
+
+/* Clan members container */
+.clan-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.clan-sorting-area {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-height: 500px;
+    overflow: hidden;
+}
+
+.clans-header, .characters-display, .counting-sort-visualization {
+    background-color: #3a3935;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+#clans-header h3, #naruto-step1 h3, 
+#naruto-step2 h3, #naruto-step3 h3, 
+#naruto-step4 h3, #naruto-step5 h3,
+#naruto-step6 h3, #naruto-step7 h3,
+#characters-display h3 {
+    color: #ffffff;
+}
+
+#naruto-step3 .count-visualization {
+    background-color: #3a3935;
+}
+
+.clans-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px 0;
+}
+
+.clan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+    background-color: #4a4945;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.clan img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.clan h4 {
+    margin: 5px 0;
+    font-size: 12px;
+    color: #ffbd95;
+    text-align: center;
+}
+
+.clan-count {
+    width: 25px;
+    height: 25px;
+    background-color: #ff822e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #2b2a26;
+}
+
+/* Add to your existing CSS */
+.clan-representation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+    justify-content: center;
+}
+
+.clan-box {
+    padding: 8px 12px;
+    background-color: #4a4945;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.clan-counts-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.clan-count-box {
+    width: 100px;
+    padding: 10px;
+    background-color: #4a4945;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.count-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.clan-count-box.max-clan {
+    background-color: #eb6a28;
+}
+
+.clan-count-box.highlight {
+    background-color: #ffe6d6;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 189, 149, 0.7);
+}
+
+.clan-count-box.highlight .clan-name,
+.clan-count-box.highlight .count-value {
+    color: #2b2a26;
+}
+
+.clan-count-box.current-max {
+    background-color: #ffd7c2;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgb(255, 72, 0);
+    animation: pulse 1s infinite alternate;
+}
+
+.clan-count-box.current-max .clan-name{
+    color: #f10000;
+}
+
+
+.clan-count-box.current-max .count-value {
+    color: black;
+}
+
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.05); }
+}
+
+.max-clan-display {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #4a4945;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+}
+
+.array-boxes {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.array-box {
+    width: 40px;
+    height: 40px;
+    background-color: #eb6a28;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+}
+
+.array-box.highlight {
+    background-color: #ffbd95;
+    color: #2b2a26;
+    transform: scale(1.1);
+}
+
+.array-box.max {
+    background-color: #ff3137;
+    box-shadow: 0 0 10px rgba(255, 49, 55, 0.7);
+}
+
+.original-array-display {
+    background-color: #4a4945;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.original-array-display h4 {
+    margin-top: 0;
+    color: #ffbd95;
+}
+
+.original-array-display p {
+    margin: 8px 0;
+    color: white;
+}
+
+.characters-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    min-height: 150px;
+}
+
+.character {
+    width: 60px;
+    height: 60px;
+    transition: all 0.3s ease;
+}
+
+.character img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 5px rgba(255, 130, 46, 0.5));
+}
+
+/* Final sorted characters */
+.sorted-characters {
+    margin-top: 20px;
+}
+
+.sorted-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sorted-character {
+    display: flex;
+    align-items: center;
+    background-color: #4a4945;
+    padding: 10px;
+    border-radius: 5px;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+.character-profile {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: black;
+    margin-right: 15px;
+    overflow: hidden;
+}
+
+.character-profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.character-info {
+    flex-grow: 1;
+}
+
+.character-name {
+    font-weight: bold;
+    color: white;
+}
+
+.character-clan {
+    font-size: 0.8em;
+    color: #ffbd95;
+}
+
+/* Original array display */
+.original-array-display {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #4a4945;
+    border-radius: 5px;
+    color: white;
+}
+
+.counting-sort-visualization {
+    min-height: 100px;
+}
+
+.sort-steps-container {
+    background-color: #4a4945;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.controls button {
+    padding: 10px 20px;
+    background-color: #ff822e;
+    border: none;
+    border-radius: 5px;
+    color: #2b2a26;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.controls button:hover {
+    background-color: #ffbd95;
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px 20px;
+    }
+    
+    .clan {
+        width: 70px;
+        padding: 8px;
+    }
+    
+    .character {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .controls {
+        flex-wrap: wrap;
+    }
+    
+    .controls button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
+/* Step 2 Specific Styles */
+.count-array-display {
+    margin-top: 20px;
+    background-color: #4a4945;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.count-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.count-box {
+    width: 60px;
+    height: 70px;
+    background-color: #3a3935;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.count-box.empty {
+    border: 2px dashed #ffbd95;
+}
+
+.count-box .index {
+    font-size: 12px;
+    color: #ffbd95;
+}
+
+.count-box .value {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.array-legend {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #ffbd95;
+    text-align: center;
+}
+
+.explanation {
+    background-color: #4a4945;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.explanation p {
+    margin: 5px 0;
+}
+
+.clan-mapping {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.mapping-box {
+    padding: 5px 10px;
+    background-color: #4a4945;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.clan-name {
+    color: #ffbd95;
+}
+
+.mapping-arrow {
+    margin: 0 5px;
+    color: white;
+}
+
+.clan-value {
+    color: white;
+    font-weight: bold;
+}
+
+/* Step 7 - Final Result Styles */
+.final-result-container {
+    background-color: #4a4945;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.sorted-characters {
+    position: relative;
+    z-index: 2;
+}
+
+.clan-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.clan-group {
+    background-color: #3a3935;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.clan-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ffbd95;
+}
+
+.clan-header img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.clan-header h5 {
+    color: #ffbd95;
+    margin: 0;
+    font-size: 18px;
+}
+
+.clan-members {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.character-card {
+    width: 100px;
+    background-color: #4a4945;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.character-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 50%;
+    background-color: black;
+    padding: 3px;
+    margin-bottom: 8px;
+}
+
+.character-name {
+    font-size: 12px;
+    text-align: center;
+    color: white;
+}
+
+/* Celebration effects */
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #f00;
+    opacity: 0;
+    animation: confetti 5s ease-in-out infinite;
+    z-index: 1;
+}
+
+.confetti:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+    background-color: #ff7675;
+}
+.confetti:nth-child(2) {
+    left: 30%;
+    animation-delay: 0.5s;
+    background-color: #74b9ff;
+}
+.confetti:nth-child(3) {
+    left: 50%;
+    animation-delay: 1s;
+    background-color: #55efc4;
+}
+.confetti:nth-child(4) {
+    left: 70%;
+    animation-delay: 1.5s;
+    background-color: #a29bfe;
+}
+.confetti:nth-child(5) {
+    left: 90%;
+    animation-delay: 2s;
+    background-color: #ffeaa7;
+}
+
+@keyframes confetti {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(500px) rotate(360deg); opacity: 0; }
+}
+
+.complexity {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #3a3935;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    text-align: center;
+}
+
+.complexity p {
+    margin: 5px 0;
+    color: #ffbd95;
+}
